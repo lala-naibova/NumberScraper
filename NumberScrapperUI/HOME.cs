@@ -22,11 +22,39 @@ namespace NumberScrapperUI
         {
 
             DialogResult dioResult= this.openFileDialog.ShowDialog();
+
             if (dioResult == DialogResult.OK)
             {
-                string allFileNames = string.Join(Environment.NewLine, openFileDialog.FileNames);
-                MessageBox.Show(allFileNames);
+                int count = openFileDialog.FileNames.Length;
+                if (count > 1)
+                {
+                    lblSelectedFilesCount.Text = $"{count} files selected";
+                }
+                else 
+                {
+                    lblSelectedFilesCount.Text = "1 file selected";
+                }
+                
             }
+            else if (dioResult==DialogResult.Cancel)
+            {
+                lblSelectedFilesCount.Text = "No files selected";
+            }
+        }
+
+        private void btnBroseFolder_Click(object sender, EventArgs e)
+        {
+
+            DialogResult diLog = folderBrowserDialog.ShowDialog();
+            if (diLog==DialogResult.OK)
+            {
+                lblFolderPath.Text = folderBrowserDialog.SelectedPath;
+            }
+            else if (diLog==DialogResult.Cancel)
+            {
+                MessageBox.Show("You press the Cancel button");
+            }
+            
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtFilePath = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnStart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,14 +36,9 @@
             this.btnBroseFiles = new System.Windows.Forms.Button();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.lblSelectedFilesCount = new System.Windows.Forms.Label();
+            this.lblFolderPath = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // txtFilePath
-            // 
-            this.txtFilePath.Location = new System.Drawing.Point(218, 176);
-            this.txtFilePath.Name = "txtFilePath";
-            this.txtFilePath.Size = new System.Drawing.Size(214, 20);
-            this.txtFilePath.TabIndex = 13;
             // 
             // progressBar1
             // 
@@ -78,7 +72,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Select files to parse";
+            this.label1.Text = "Select files to parse...";
             // 
             // btnBroseFolder
             // 
@@ -88,6 +82,7 @@
             this.btnBroseFolder.TabIndex = 8;
             this.btnBroseFolder.Text = "Brose folder";
             this.btnBroseFolder.UseVisualStyleBackColor = true;
+            this.btnBroseFolder.Click += new System.EventHandler(this.btnBroseFolder_Click);
             // 
             // btnBroseFiles
             // 
@@ -108,12 +103,31 @@
             this.openFileDialog.FileName = "openFileDialog1";
             this.openFileDialog.Multiselect = true;
             // 
+            // lblSelectedFilesCount
+            // 
+            this.lblSelectedFilesCount.AutoSize = true;
+            this.lblSelectedFilesCount.Location = new System.Drawing.Point(175, 65);
+            this.lblSelectedFilesCount.Name = "lblSelectedFilesCount";
+            this.lblSelectedFilesCount.Size = new System.Drawing.Size(88, 13);
+            this.lblSelectedFilesCount.TabIndex = 14;
+            this.lblSelectedFilesCount.Text = "No files selected.";
+            // 
+            // lblFolderPath
+            // 
+            this.lblFolderPath.AutoSize = true;
+            this.lblFolderPath.Location = new System.Drawing.Point(175, 191);
+            this.lblFolderPath.Name = "lblFolderPath";
+            this.lblFolderPath.Size = new System.Drawing.Size(106, 13);
+            this.lblFolderPath.TabIndex = 15;
+            this.lblFolderPath.Text = "Selected Folder Path";
+            // 
             // HOME
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 462);
-            this.Controls.Add(this.txtFilePath);
+            this.Controls.Add(this.lblFolderPath);
+            this.Controls.Add(this.lblSelectedFilesCount);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label2);
@@ -128,8 +142,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label label2;
@@ -138,6 +150,8 @@
         private System.Windows.Forms.Button btnBroseFiles;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Label lblSelectedFilesCount;
+        private System.Windows.Forms.Label lblFolderPath;
     }
 }
 
