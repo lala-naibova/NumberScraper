@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.btnStart = new System.Windows.Forms.Button();
+            this.btnScan = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBroseFolder = new System.Windows.Forms.Button();
@@ -38,23 +38,26 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.lblSelectedFilesCount = new System.Windows.Forms.Label();
             this.lblFolderPath = new System.Windows.Forms.Label();
+            this.btnCreateTheNewFile = new System.Windows.Forms.Button();
+            this.lblCountOfNumbers = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(158, 255);
+            this.progressBar1.Location = new System.Drawing.Point(175, 322);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(274, 49);
             this.progressBar1.TabIndex = 12;
             // 
-            // btnStart
+            // btnScan
             // 
-            this.btnStart.Location = new System.Drawing.Point(15, 255);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(109, 49);
-            this.btnStart.TabIndex = 11;
-            this.btnStart.Text = "Start";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnScan.Location = new System.Drawing.Point(601, 36);
+            this.btnScan.Name = "btnScan";
+            this.btnScan.Size = new System.Drawing.Size(68, 55);
+            this.btnScan.TabIndex = 11;
+            this.btnScan.Text = "Scan";
+            this.btnScan.UseVisualStyleBackColor = true;
+            this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
             // 
             // label2
             // 
@@ -121,15 +124,36 @@
             this.lblFolderPath.TabIndex = 15;
             this.lblFolderPath.Text = "Selected Folder Path";
             // 
+            // btnCreateTheNewFile
+            // 
+            this.btnCreateTheNewFile.Location = new System.Drawing.Point(12, 322);
+            this.btnCreateTheNewFile.Name = "btnCreateTheNewFile";
+            this.btnCreateTheNewFile.Size = new System.Drawing.Size(109, 49);
+            this.btnCreateTheNewFile.TabIndex = 16;
+            this.btnCreateTheNewFile.Text = "Save to file";
+            this.btnCreateTheNewFile.UseVisualStyleBackColor = true;
+            this.btnCreateTheNewFile.Click += new System.EventHandler(this.btnCreateTheNewFile_Click);
+            // 
+            // lblCountOfNumbers
+            // 
+            this.lblCountOfNumbers.AutoSize = true;
+            this.lblCountOfNumbers.Location = new System.Drawing.Point(563, 108);
+            this.lblCountOfNumbers.Name = "lblCountOfNumbers";
+            this.lblCountOfNumbers.Size = new System.Drawing.Size(106, 13);
+            this.lblCountOfNumbers.TabIndex = 17;
+            this.lblCountOfNumbers.Text = "Nothing has founded";
+            // 
             // HOME
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 462);
+            this.Controls.Add(this.lblCountOfNumbers);
+            this.Controls.Add(this.btnCreateTheNewFile);
             this.Controls.Add(this.lblFolderPath);
             this.Controls.Add(this.lblSelectedFilesCount);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.btnScan);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBroseFolder);
@@ -143,7 +167,7 @@
 
         #endregion
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Button btnScan;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBroseFolder;
@@ -152,6 +176,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.Label lblSelectedFilesCount;
         private System.Windows.Forms.Label lblFolderPath;
+        private System.Windows.Forms.Button btnCreateTheNewFile;
+        private System.Windows.Forms.Label lblCountOfNumbers;
     }
 }
 
