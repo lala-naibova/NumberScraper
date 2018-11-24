@@ -51,7 +51,7 @@
             // 
             this.btnStart.Location = new System.Drawing.Point(15, 255);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(88, 49);
+            this.btnStart.Size = new System.Drawing.Size(109, 49);
             this.btnStart.TabIndex = 11;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(22, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 13);
+            this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Select files to parse...";
             // 
@@ -78,7 +78,7 @@
             // 
             this.btnBroseFolder.Location = new System.Drawing.Point(15, 166);
             this.btnBroseFolder.Name = "btnBroseFolder";
-            this.btnBroseFolder.Size = new System.Drawing.Size(112, 38);
+            this.btnBroseFolder.Size = new System.Drawing.Size(109, 38);
             this.btnBroseFolder.TabIndex = 8;
             this.btnBroseFolder.Text = "Brose folder";
             this.btnBroseFolder.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@
             // lblSelectedFilesCount
             // 
             this.lblSelectedFilesCount.AutoSize = true;
-            this.lblSelectedFilesCount.Location = new System.Drawing.Point(175, 65);
+            this.lblSelectedFilesCount.Location = new System.Drawing.Point(155, 65);
             this.lblSelectedFilesCount.Name = "lblSelectedFilesCount";
             this.lblSelectedFilesCount.Size = new System.Drawing.Size(88, 13);
             this.lblSelectedFilesCount.TabIndex = 14;
@@ -115,7 +115,7 @@
             // lblFolderPath
             // 
             this.lblFolderPath.AutoSize = true;
-            this.lblFolderPath.Location = new System.Drawing.Point(175, 191);
+            this.lblFolderPath.Location = new System.Drawing.Point(155, 191);
             this.lblFolderPath.Name = "lblFolderPath";
             this.lblFolderPath.Size = new System.Drawing.Size(106, 13);
             this.lblFolderPath.TabIndex = 15;
