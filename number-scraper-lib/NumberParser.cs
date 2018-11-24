@@ -9,28 +9,13 @@ namespace NumberScraperLib
 {
     public class NumberParser : INumberParser
     {
-        static string mainNumbers = "1234567890";
-        static string anotherSymbols = "() -";
-
-        static readonly string validSymbols = string.Concat(mainNumbers, anotherSymbols);
+  
+        const string validSymbols = "1234567890() -";
 
         public List<string> ListTheNumbers(string path)
-        {
-            StreamReader sreader = null;
-            try
-            {
-                sreader = new StreamReader(path);
-
-            }
-            catch (FileNotFoundException)
-            {
-                Console.WriteLine("File not found.");
-                Environment.Exit(0);
-            }
-
-            using (sreader)            
-            {
-                
+        {            
+            using (StreamReader sreader = new StreamReader(path))            
+            {                
                 List<string> numbers = new List<string>();
 
                 while (!sreader.EndOfStream)
@@ -90,22 +75,8 @@ namespace NumberScraperLib
             return false;
         }
 
-        static int GetDigitCount(string str)
-        {
+        static int GetDigitCount(string str) => str.Count(c => char.IsDigit(c));
 
-            int count = 0;
-
-            foreach (char c in str)
-            {
-                if (mainNumbers.Contains(c))
-                {
-                    count++;
-                }
-            }
-
-
-            return count;
-        }
 
         static int GetFirstDigitIndex(string str, int startFrom = 0)
         {
@@ -115,9 +86,9 @@ namespace NumberScraperLib
             {
                 char c = str[i];
 
-                if (mainNumbers.Contains(c))
+                if (char.IsDigit(c))
                 {
-                    firstIndex = str.IndexOf(c);
+                    firstIndex = i;
                     break;
                 }
             }
@@ -145,20 +116,15 @@ namespace NumberScraperLib
 
         static string RemoveNonDigitChars(string str)
         {
-            string result = string.Empty;
+            IEnumerable<char> chars = str.Where(c => char.IsDigit(c));
 
-            for (int i = 0; i < str.Length; i++)
-            {
-                char c = str[i];
+            //string str1 = new string(chars.ToArray());
 
-                if (mainNumbers.Contains(c))
-                {
-                    result += c;
-                }
-            }
+            string result = String.Concat(str.Where(c => char.IsDigit(c)));
             return result;
         }
 
+        
         static string SetNumberStyle(string str)
         {
             if (str.Length == 9)
@@ -167,18 +133,13 @@ namespace NumberScraperLib
             }
             else if (str.Length == 10)
             {
-                str = "994" + str.Substring(1, str.Length - 1);
+                str = "994" + str.Substring(1);
             }
             else if (str.Length == 7)
             {
                 str = "99412" + str;
             }
             return str;
-        }
-
-        static void PrintMessage(string message)
-        {
-            Console.WriteLine(message);
         }
 
         static string GetResultPath(string filePath)
@@ -193,18 +154,6 @@ namespace NumberScraperLib
             return fileName;
         }
 
-        static string GetOnlyNumbers(string str)
-        {
-            int digitCount = GetDigitCount(str);
-
-            int firstIndex = GetFirstDigitIndex(str);
-
-            int lastIndex = GetStopIndex(str, firstIndex);
-
-            string firstVersion = str.Substring(firstIndex, lastIndex - firstIndex);
-
-            return RemoveNonDigitChars(firstVersion);
-
-        }
+       
     }
 }
